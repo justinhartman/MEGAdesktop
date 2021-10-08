@@ -3,6 +3,7 @@ module.exports = {
         'browser': true,
         'commonjs': true,
         'es2021': true,
+        'node': true,
     },
     'extends': 'eslint:recommended',
     'parserOptions': {
@@ -12,8 +13,8 @@ module.exports = {
         'indent': ['error', 4],
         'linebreak-style': ['error', 'unix'],
         'quotes': ['error', 'single'],
-        'semi': ['error', 'never'],
-        'comma-dangle': ['error', 'always'],
+        'semi': ['error', 'always'],
+        'comma-dangle': ['error', 'always-multiline'],
         'comma-style': ['error', 'last'],
         'prefer-arrow-callback': ['error'],
     },

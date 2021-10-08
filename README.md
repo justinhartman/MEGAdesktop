@@ -22,6 +22,13 @@ yarn package
 
 ## Testing
 
+ESlint is integrated into this package and will lint and fix files according to 
+code standards defined in the `.eslintrc.js` configuration:
+
+```bash
+yarn lint
+```
+
 There is also a command for testing which is non-functional as I haven't 
 implemented this yet.
 

@@ -16,9 +16,10 @@
   "scripts": {
     "icons": "./node_modules/.bin/electron-icon-builder --flatten --input=./src/icons/icon.png --output=./build",
     "start": "electron-forge start",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "yarn eslint -c .eslintrc.js Gruntfile.js main.js menu.js preload.js --fix"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.61",
