@@ -15,6 +15,7 @@ app.setAboutPanelOptions({
 // Import application main menu.
 require('./menu');
 
+// Configuration for the main application window.
 function createWindow () {
     const mainWindow = new BrowserWindow({
         width: 960,
@@ -23,33 +24,36 @@ function createWindow () {
         titleBarStyle: 'hidden',
         show: false,
         backgroundColor: '#2e2c29',
-        // icon: __dirname + '/build/icons/icon.png',
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
-        }
+            preload: path.join(__dirname, 'preload.js'),
+        },
     });
 
-    // Load a remote URL
-    mainWindow.loadURL('https://mega.nz')
+    // Load a remote URL.
+    mainWindow.loadURL('https://mega.nz');
 
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools();
 
     mainWindow.once('ready-to-show', () => {
         mainWindow.show();
-    })
+    });
 }
 
 app.whenReady().then(() => {
     createWindow();
 
-    //Open a window if none are open (macOS)
+    // Open a window if none are open (macOS).
     app.on('activate', function () {
-        if (BrowserWindow.getAllWindows().length === 0) createWindow()
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow();
+        }
     });
 
-    // Quit the app when all windows are closed (Windows & Linux)
+    // Quit the app when all windows are closed (Windows & Linux).
     app.on('window-all-closed', function () {
-        if (process.platform !== 'darwin') app.quit()
+        if (process.platform !== 'darwin') {
+            app.quit();
+        }
     });
 });

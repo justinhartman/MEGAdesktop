@@ -105,7 +105,6 @@ const template = [
                     await shell.openExternal('https://github.com/justinhartman/MEGAdesktop/issues/new/choose');
                 },
             },
-
             {
                 label: 'Donate ❤️',
                 click: async () => {
