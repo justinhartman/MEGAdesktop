@@ -1,3 +1,13 @@
+/**
+ * Main application file to handle the process for setting up the app.
+ *
+ * @author     Justin Hartman <code@justinhartman.co>
+ * @link       https://justinhartman.co
+ * @copyright  Copyright (c) 2021 Justin Hartman
+ * @licence    https://github.com/justinhartman/MEGAdesktop/blob/main/LICENSE MIT
+ * @since      1.0.0
+ */
+
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
@@ -6,10 +16,10 @@ app.setName('MEGAdesktop');
 
 // Set about menu panel options.
 app.setAboutPanelOptions({
-    applicationName: "MEGAdesktop",
-    copyright: "Copyright (c) 2021 Justin Hartman - https://justinhartman.co",
-    authors: ["Justin Hartman"],
-    website: "https://justinhartman.co"
+    applicationName: 'MEGAdesktop',
+    copyright: 'Copyright (c) 2021 Justin Hartman - https://justinhartman.co',
+    authors: ['Justin Hartman'],
+    website: 'https://justinhartman.co',
 });
 
 // Import application main menu.
@@ -44,14 +54,14 @@ app.whenReady().then(() => {
     createWindow();
 
     // Open a window if none are open (macOS).
-    app.on('activate', function () {
+    app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
             createWindow();
         }
     });
 
     // Quit the app when all windows are closed (Windows & Linux).
-    app.on('window-all-closed', function () {
+    app.on('window-all-closed', () => {
         if (process.platform !== 'darwin') {
             app.quit();
         }

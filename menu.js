@@ -1,3 +1,13 @@
+/**
+ * Configures the application menu bar with specific checks for macOS.
+ *
+ * @author     Justin Hartman <code@justinhartman.co>
+ * @link       https://justinhartman.co
+ * @copyright  Copyright (c) 2021 Justin Hartman
+ * @licence    https://github.com/justinhartman/MEGAdesktop/blob/main/LICENSE MIT
+ * @since      1.0.0
+ */
+
 const { app, Menu, shell} = require('electron');
 const isMac = process.platform === 'darwin';
 

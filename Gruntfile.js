@@ -2,9 +2,12 @@
  * Gruntfile for changelog, version bumps and git workflow.
  *
  * @author     Justin Hartman <code@justinhartman.co>
- * @copyright  Copyright (c) 2021 Justin Hartman <https://justinhartman.co>
- * @version    1.0.0
+ * @link       https://justinhartman.co
+ * @copyright  Copyright (c) 2021 Justin Hartman
+ * @licence    https://github.com/justinhartman/MEGAdesktop/blob/main/LICENSE MIT
+ * @since      1.0.0
  */
+
 module.exports = function (grunt) {
     grunt.loadNpmTasks('git-changelog');
     grunt.loadNpmTasks('grunt-bump');
@@ -29,61 +32,61 @@ module.exports = function (grunt) {
             main: {
                 options: {
                     app_name: 'MEGAdesktop Changelog',
-                    logo: "https://github.com/justinhartman/MEGAdesktop/raw/main/docs/images/icon.png",
-                    intro: "Detailed changelog of revisions to the MEGAdesktop app.",
-                    branch: "main",
-                    repo_url: "https://github.com/justinhartman/MEGAdesktop",
-                    file: "docs/tags/<%= pkg.version %>.md",
-                    template: "docs/tags/templates/log_template.md",
-                    commit_template: "docs/tags/templates/log_commit_template.md",
+                    logo: 'https://github.com/justinhartman/MEGAdesktop/raw/main/docs/images/icon.png',
+                    intro: 'Detailed changelog of revisions to the MEGAdesktop app.',
+                    branch: 'main',
+                    repo_url: 'https://github.com/justinhartman/MEGAdesktop',
+                    file: 'docs/tags/<%= pkg.version %>.md',
+                    template: 'docs/tags/templates/log_template.md',
+                    commit_template: 'docs/tags/templates/log_commit_template.md',
                     sections : [
                         {
-                            "title": "New Features",
-                            "grep": "^feat"
+                            'title': 'New Features',
+                            'grep': '^feat',
                         },
                         {
-                            "title": "Bug Fixes",
-                            "grep": "^fix"
+                            'title': 'Bug Fixes',
+                            'grep': '^fix',
                         },
                         {
-                            "title": "Breaking Changes",
-                            "grep": "^break"
+                            'title': 'Breaking Changes',
+                            'grep': '^break',
                         },
                         {
-                            "title": "Refactored Code",
-                            "grep": "^refact"
+                            'title': 'Refactored Code',
+                            'grep': '^refact',
                         },
                         {
-                            "title": "Testing",
-                            "grep": "^test"
+                            'title': 'Testing',
+                            'grep': '^test',
                         },
                         {
-                            "title": "Documentation",
-                            "grep": "^docs"
+                            'title': 'Documentation',
+                            'grep': '^docs',
                         },
                         {
-                            "title": "Style Changes",
-                            "grep": "^style"
+                            'title': 'Style Changes',
+                            'grep': '^style',
                         },
                         {
-                            "title": "StyleCI Fixes",
-                            "grep": "^Apply fixes from"
+                            'title': 'StyleCI Fixes',
+                            'grep': '^Apply fixes from',
                         },
                         {
-                            "title": "Core Updates",
-                            "grep": "^chore"
+                            'title': 'Core Updates',
+                            'grep': '^chore',
                         },
                         {
-                            "title": "Yarn Package Updates",
-                            "grep": "^yarn"
+                            'title': 'Yarn Package Updates',
+                            'grep': '^yarn',
                         },
                         {
-                            "title": "Branches Merged",
-                            "grep": "^Merge branch"
+                            'title': 'Branches Merged',
+                            'grep': '^Merge branch',
                         },
                         {
-                            "title" : "Pull Requests Merged",
-                            "grep": "^Merge pull request"
+                            'title' : 'Pull Requests Merged',
+                            'grep': '^Merge pull request',
                         },
                     ],
                 },
