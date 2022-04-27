@@ -31,7 +31,7 @@
     "electron-icon-builder": "^2.0.1",
     "eslint": "^7.32.0",
     "git-changelog": "^2.0.0",
-    "grunt": "^1.4.1",
+    "grunt": "^1.5.2",
     "grunt-bump": "^0.8.0",
     "grunt-git": "^1.1.1"
   },
