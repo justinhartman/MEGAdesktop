@@ -24,6 +24,7 @@
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.61",
     "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.61",
     "@electron-forge/maker-rpm": "^6.0.0-beta.61",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
     "@electron-forge/maker-zip": "^6.0.0-beta.61",
@@ -52,24 +53,53 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "MEGAdesktop"
+            "name": "MEGAdesktop",
+            "certificateFile": "./cert.pfx",
+            "certificatePassword": "this-is-a-secret"
           }
         },
         {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin",
-            "linux",
-            "windows"
-          ]
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "name": "MEGAdesktop",
+            "format": "ULFO",
+            "icon": "./build/icons/icon.icns",
+            "overwrite": true
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip"
         },
         {
           "name": "@electron-forge/maker-deb",
-          "config": {}
+          "config": {
+            "options": {
+              "name": "MEGAdesktop",
+              "productName": "MEGAdesktop",
+              "maintainer": "Justin Hartman",
+              "homepage": "https://justinhartman.co",
+              "categories": "Utility",
+              "description": "A Mega.nz Electron Desktop app for managing files on Windows, macOS and Linux.",
+              "icon": "./build/icons/128x128.png",
+              "size": "200MB",
+              "version": "1.0.0"
+            }
+          }
         },
         {
           "name": "@electron-forge/maker-rpm",
-          "config": {}
+          "config": {
+            "options": {
+              "name": "MEGAdesktop",
+              "productName": "MEGAdesktop",
+              "maintainer": "Justin Hartman",
+              "homepage": "https://justinhartman.co",
+              "categories": "Utility",
+              "description": "A Mega.nz Electron Desktop app for managing files on Windows, macOS and Linux.",
+              "icon": "./build/icons/128x128.png",
+              "version": "1.0.0"
+            }
+          }
         }
       ]
     }
