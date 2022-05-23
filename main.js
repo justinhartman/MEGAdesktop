@@ -3,7 +3,7 @@
  *
  * @author     Justin Hartman <code@justinhartman.co>
  * @link       https://justinhartman.co
- * @copyright  Copyright (c) 2021 Justin Hartman
+ * @copyright  Copyright (c) 2021-2022 Justin Hartman
  * @licence    https://github.com/justinhartman/MEGAdesktop/blob/main/LICENSE MIT
  * @since      1.0.0
  */
@@ -11,13 +11,17 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
+// Prevent app from loading multiple times during Squirrel install
+// See: https://github.com/electron/windows-installer#handling-squirrel-events
+if (require('electron-squirrel-startup')) return app.quit();
+
 // Set application name.
 app.setName('MEGAdesktop');
 
 // Set about menu panel options.
 app.setAboutPanelOptions({
     applicationName: 'MEGAdesktop',
-    copyright: 'Copyright (c) 2021 Justin Hartman - https://justinhartman.co',
+    copyright: 'Copyright (c) 2021-2022 Justin Hartman \ncode@justinhartman.co\nhttps://justinhartman.co',
     authors: ['Justin Hartman'],
     website: 'https://justinhartman.co',
 });
@@ -30,8 +34,9 @@ function createWindow () {
     const mainWindow = new BrowserWindow({
         width: 960,
         height: 600,
-        frame: false,
-        titleBarStyle: 'hidden',
+        titleBarStyle: 'default',
+        titleBarOverlay: true,
+        roundedCorners: true,
         show: false,
         backgroundColor: '#2e2c29',
         webPreferences: {
