@@ -39,13 +39,13 @@ function createWindow () {
         roundedCorners: true,
         show: false,
         backgroundColor: '#2e2c29',
-        webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
-        },
     });
 
     // Load a remote URL.
-    mainWindow.loadURL('https://mega.nz');
+    mainWindow.loadURL('https://mega.nz/login');
+
+    // Load a local file URL.
+    // mainWindow.loadFile('index.html');
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools();
