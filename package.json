@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Mega.nz Electron Desktop app for managing files on Windows, macOS and Linux.",
   "author": "Justin Hartman <code@justinhartman.co>",
-  "copyright": "Copyright (c) 2021 Justin Hartman <code@justinhartman.co>",
+  "copyright": "Copyright (c) 2021-2022 Justin Hartman <code@justinhartman.co>",
   "license": "MIT",
   "repository": {
     "type": "git",
