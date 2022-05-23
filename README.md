@@ -5,24 +5,36 @@
 
 ![MEGAdesktop][screenshot]
 
-## Build
+## Download
 
-You can run and build the app with the following:
+You can download the latest releases for macOS, Windows, Debian/Ubuntu and 
+RPM-based Linux distributions directly from the [releases page][releases] where
+packages are contained for each platform.
+
+## Changelog
+
+Changelogs are stored in the `docs/tags` folder. You can view the latest
+[Changelog by going here](/docs/tags/).
+
+## Build and Package
+
+You can run, build and package the app to macOS, Linux, Debian/Ubuntu (deb) and
+CentOS/RedHat (rpm) with the following:
 
 ```bash
 # Start the development app
 yarn start
 
-# Make the binaries
-yarn make
-
-# Package the binaries for distribution
+# Package the binaries
 yarn package
+
+# Package and Make the binaries for distribution
+yarn make
 ```
 
 ## Testing
 
-ESlint is integrated into this package and will lint and fix files according to 
+ESlint is integrated into this package and will lint and fix files according to
 code standards defined in the `.eslintrc.js` configuration:
 
 ```bash
@@ -60,10 +72,10 @@ grunt major
 
 ## License
 
-> Copyright (c) 2021 Justin Hartman <code@justinhartman.co> (https://justinhartman.co)
+> Copyright (c) 2021-2022 Justin Hartman <code@justinhartman.co> (https://justinhartman.co)
 
-The software is released under the MIT license. See the [LICENSE](LICENSE) file 
-for more.
+This software is released under the MIT license. See the [LICENSE](LICENSE)
+file for more information.
 
 ## Credits
 
@@ -73,3 +85,6 @@ for more.
 [freepik]: https://www.freepik.com "Freepik"
 [flaticon]: https://www.flaticon.com "Flaticon"
 [icon-src]: https://www.flaticon.com/free-icon/mega_873133
+[releases]: https://github.com/justinhartman/MEGAdesktop/releases
+[latest]: https://github.com/justinhartman/MEGAdesktop/releases/latest
+[support]: https://github.com/justinhartman/MEGAdesktop/issues/new/choose
