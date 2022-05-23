@@ -10,6 +10,7 @@
 
 const { app, Menu, shell} = require('electron');
 const isMac = process.platform === 'darwin';
+const devTools = process.env.IS_DEV ? { role: 'toggleDevTools' } : { type: 'separator' };
 
 const template = [
     ...(isMac ? [{
@@ -69,8 +70,7 @@ const template = [
         submenu: [
             { role: 'reload' },
             { role: 'forceReload' },
-            // { role: 'toggleDevTools' },
-            { type: 'separator' },
+            devTools,
             // { role: 'resetZoom' },
             // { role: 'zoomIn' },
             // { role: 'zoomOut' },
@@ -97,6 +97,12 @@ const template = [
     {
         role: 'help',
         submenu: [
+            {
+                label: 'Check for Updates',
+                click: async () => {
+                    await shell.openExternal('https://github.com/justinhartman/MEGAdesktop/releases/latest');
+                },
+            },
             {
                 label: 'Learn More',
                 click: async () => {
