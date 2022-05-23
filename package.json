@@ -15,93 +15,33 @@
   "main": "main.js",
   "scripts": {
     "icons": "./node_modules/.bin/electron-icon-builder --flatten --input=./src/icons/icon.png --output=./build",
-    "start": "electron-forge start",
+    "start": "IS_DEV=true electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "yarn eslint -c .eslintrc.js Gruntfile.js main.js menu.js preload.js --fix"
+    "lint": "yarn eslint -c .eslintrc.js forge.config.js Gruntfile.js main.js menu.js preload.js --fix"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.61",
-    "@electron-forge/maker-deb": "^6.0.0-beta.61",
-    "@electron-forge/maker-dmg": "^6.0.0-beta.61",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
-    "@electron-forge/maker-zip": "^6.0.0-beta.61",
-    "electron": "^15.1.2",
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/core": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^17.4.5",
     "electron-icon-builder": "^2.0.1",
-    "eslint": "^7.32.0",
+    "eslint": "^8.16.0",
     "git-changelog": "^2.0.0",
-    "grunt": "^1.4.1",
+    "grunt": "^1.5.3",
     "grunt-bump": "^0.8.0",
     "grunt-git": "^1.1.1"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "node-ray": "^1.18.0"
   },
   "config": {
-    "forge": {
-      "packagerConfig": {
-        "name": "MEGAdesktop",
-        "productName": "MEGAdesktop",
-        "executableName": "MEGAdesktop",
-        "appBundleId": "co.justinhartman.megadesktop",
-        "appCategoryType": "public.app-category.productivity",
-        "icon": "./build/icons/icon"
-      },
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "MEGAdesktop",
-            "certificateFile": "./cert.pfx",
-            "certificatePassword": "this-is-a-secret"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-dmg",
-          "config": {
-            "name": "MEGAdesktop",
-            "format": "ULFO",
-            "icon": "./build/icons/icon.icns",
-            "overwrite": true
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip"
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {
-            "options": {
-              "name": "MEGAdesktop",
-              "productName": "MEGAdesktop",
-              "maintainer": "Justin Hartman",
-              "homepage": "https://justinhartman.co",
-              "categories": "Utility",
-              "description": "A Mega.nz Electron Desktop app for managing files on Windows, macOS and Linux.",
-              "icon": "./build/icons/128x128.png",
-              "size": "200MB",
-              "version": "1.0.0"
-            }
-          }
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {
-            "options": {
-              "name": "MEGAdesktop",
-              "productName": "MEGAdesktop",
-              "maintainer": "Justin Hartman",
-              "homepage": "https://justinhartman.co",
-              "categories": "Utility",
-              "description": "A Mega.nz Electron Desktop app for managing files on Windows, macOS and Linux.",
-              "icon": "./build/icons/128x128.png",
-              "version": "1.0.0"
-            }
-          }
-        }
-      ]
-    }
+    "forge": "./forge.config.js"
   }
 }
